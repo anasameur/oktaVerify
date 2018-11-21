@@ -1,0 +1,69 @@
+#!/bin/sh
+#
+# chkconfig: 2345 80 30
+ 
+# le nom du service
+SERVICE_NAME=saml_jwt_verify
+# le répertoire où se trouvent les exécutables du service
+SERVICE_DIRECTORY=/opt/authokta/nodeapps/admin
+# le nom du script de démarrage du service
+SERVICE_STARTUP_SCRIPT=nodeService.sh
+# le nom du script d'arrêt du service
+SERVICE_SHUTDOWN_SCRIPT=nodeService.sh
+NODE_APPLI_NAME=saml_jwt_verify
+usage()
+{
+        echo "-----------------------"
+        echo "Usage: $0 (stop|start|restart|status) \"Node App Name\""
+        echo "-----------------------"
+}
+ 
+if [ -z $1 ]; then
+        usage
+fi
+ 
+service_start()
+{
+        echo "Starting service '${SERVICE_NAME}'..."
+        OWD=`pwd`
+        cd ${SERVICE_DIRECTORY} ; ./${SERVICE_STARTUP_SCRIPT} start ${NODE_APPLI_NAME}
+        cd $OWD
+        echo "Service '${SERVICE_NAME}' started successfully"
+}
+ 
+service_stop()
+{
+        echo "Stopping service '${SERVICE_NAME}'..."
+        OWD=`pwd`
+        cd ${SERVICE_DIRECTORY} ; ./${SERVICE_SHUTDOWN_SCRIPT} stop ${NODE_APPLI_NAME}
+        cd $OWD
+        echo "Service '${SERVICE_NAME}' stopped"
+}
+
+service_status()
+{
+        echo "Status of service '${SERVICE_NAME}'..."
+        OWD=`pwd`
+        cd ${SERVICE_DIRECTORY} ; ./${SERVICE_SHUTDOWN_SCRIPT} status ${NODE_APPLI_NAME}
+        cd $OWD
+}
+ 
+case $1 in
+        stop)
+                service_stop
+        ;;
+        start)
+                service_start
+        ;;
+		status)
+                service_status
+        ;;
+        restart)
+                service_stop
+                service_start
+        ;;
+        *)
+                usage
+esac
+exit 0
+

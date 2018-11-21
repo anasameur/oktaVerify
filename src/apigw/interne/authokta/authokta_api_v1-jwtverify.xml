@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Item xmlns="http://ns.l7tech.com/2010/04/gateway-management">
+    <Name>rec1-authokta_api_v1-jwtverify</Name>
+    <Type>SERVICE</Type>
+    <Link rel="self" uri="https://dcvsvu807.d70.tes.local:8443/restman/1.0/services/8789b965e6d41a37daa640c4564a0585"/>
+    <Link rel="template" uri="https://dcvsvu807.d70.tes.local:8443/restman/1.0/services/template"/>
+    <Link rel="list" uri="https://dcvsvu807.d70.tes.local:8443/restman/1.0/services"/>
+    <Link rel="dependencies" uri="https://dcvsvu807.d70.tes.local:8443/restman/1.0/services/8789b965e6d41a37daa640c4564a0585/dependencies"/>
+    <Link rel="versions" uri="https://dcvsvu807.d70.tes.local:8443/restman/1.0/services/8789b965e6d41a37daa640c4564a0585/versions"/>
+    <Link rel="parentFolder" uri="https://dcvsvu807.d70.tes.local:8443/restman/1.0/folders/8789b965e6d41a37daa640c4564a04d9"/>
+    <Resource>
+        <Service>
+            <ServiceDetail folderId="__authokta__">
+                <Name>rec1-authokta_api_v1-jwtverify</Name>
+                <Enabled>true</Enabled>
+                <ServiceMappings>
+                    <HttpMapping>
+                        <UrlPattern>/-rec1-/authokta/api/v1/jwtverify*</UrlPattern>
+                        <Verbs>
+                            <Verb>GET</Verb>
+                            <Verb>POST</Verb>
+                            <Verb>PUT</Verb>
+                            <Verb>DELETE</Verb>
+                            <Verb>OPTIONS</Verb>
+                        </Verbs>
+                    </HttpMapping>
+                </ServiceMappings>
+                <Properties>
+                    <Property key="internal">
+                        <BooleanValue>false</BooleanValue>
+                    </Property>
+                    <Property key="policyRevision">
+                        <LongValue>2</LongValue>
+                    </Property>
+                    <Property key="soap">
+                        <BooleanValue>false</BooleanValue>
+                    </Property>
+                    <Property key="tracingEnabled">
+                        <BooleanValue>false</BooleanValue>
+                    </Property>
+                    <Property key="wssProcessingEnabled">
+                        <BooleanValue>false</BooleanValue>
+                    </Property>
+                </Properties>
+            </ServiceDetail>
+            <Resources>
+                <ResourceSet tag="policy">
+                    <Resource type="policy">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;wsp:Policy xmlns:L7p=&quot;http://www.layer7tech.com/ws/policy&quot; xmlns:wsp=&quot;http://schemas.xmlsoap.org/ws/2002/12/policy&quot;&gt;
+    &lt;wsp:All wsp:Usage=&quot;Required&quot;&gt;
+        &lt;L7p:AuditAssertion/&gt;
+        &lt;L7p:AddHeader&gt;
+            &lt;L7p:AssertionComment assertionComment=&quot;included&quot;&gt;
+                &lt;L7p:Properties mapValue=&quot;included&quot;&gt;
+                    &lt;L7p:entry&gt;
+                        &lt;L7p:key stringValue=&quot;LEFT.COMMENT&quot;/&gt;
+                        &lt;L7p:value stringValue=&quot;BasicAuth en dur&quot;/&gt;
+                    &lt;/L7p:entry&gt;
+                &lt;/L7p:Properties&gt;
+            &lt;/L7p:AssertionComment&gt;
+            &lt;L7p:HeaderName stringValue=&quot;Authorization&quot;/&gt;
+            &lt;L7p:HeaderValue stringValue=&quot;Basic YXBpbV91c2VyOn1xM1BRNT1T&quot;/&gt;
+        &lt;/L7p:AddHeader&gt;
+        &lt;wsp:OneOrMore wsp:Usage=&quot;Required&quot;&gt;
+            &lt;L7p:HttpRoutingAssertion&gt;
+                &lt;L7p:FailOnErrorStatus booleanValue=&quot;false&quot;/&gt;
+                &lt;L7p:ProtectedServiceUrl stringValue=&quot;${gateway.-rec1-.authokta_api_v1.url}/authokta/api/v1/jwtverify&quot;/&gt;
+                &lt;L7p:ProxyPassword stringValueNull=&quot;null&quot;/&gt;
+                &lt;L7p:ProxyUsername stringValueNull=&quot;null&quot;/&gt;
+                &lt;L7p:RequestHeaderRules httpPassthroughRuleSet=&quot;included&quot;&gt;
+                    &lt;L7p:ForwardAll booleanValue=&quot;true&quot;/&gt;
+                    &lt;L7p:Rules httpPassthroughRules=&quot;included&quot;&gt;
+                        &lt;L7p:item httpPassthroughRule=&quot;included&quot;&gt;
+                            &lt;L7p:Name stringValue=&quot;Cookie&quot;/&gt;
+                        &lt;/L7p:item&gt;
+                        &lt;L7p:item httpPassthroughRule=&quot;included&quot;&gt;
+                            &lt;L7p:Name stringValue=&quot;SOAPAction&quot;/&gt;
+                        &lt;/L7p:item&gt;
+                    &lt;/L7p:Rules&gt;
+                &lt;/L7p:RequestHeaderRules&gt;
+                &lt;L7p:RequestParamRules httpPassthroughRuleSet=&quot;included&quot;&gt;
+                    &lt;L7p:ForwardAll booleanValue=&quot;true&quot;/&gt;
+                    &lt;L7p:Rules httpPassthroughRules=&quot;included&quot;/&gt;
+                &lt;/L7p:RequestParamRules&gt;
+                &lt;L7p:ResponseHeaderRules httpPassthroughRuleSet=&quot;included&quot;&gt;
+                    &lt;L7p:ForwardAll booleanValue=&quot;true&quot;/&gt;
+                    &lt;L7p:Rules httpPassthroughRules=&quot;included&quot;&gt;
+                        &lt;L7p:item httpPassthroughRule=&quot;included&quot;&gt;
+                            &lt;L7p:Name stringValue=&quot;Set-Cookie&quot;/&gt;
+                        &lt;/L7p:item&gt;
+                    &lt;/L7p:Rules&gt;
+                &lt;/L7p:ResponseHeaderRules&gt;
+                &lt;L7p:ResponseSize stringValue=&quot;0&quot;/&gt;
+                &lt;L7p:SamlAssertionVersion intValue=&quot;2&quot;/&gt;
+                &lt;L7p:Timeout stringValue=&quot;300000&quot;/&gt;
+            &lt;/L7p:HttpRoutingAssertion&gt;
+            &lt;L7p:Include&gt;
+                &lt;L7p:PolicyGuid stringValue=&quot;__route_lib_v1-catch_reason_code_backend__&quot;/&gt;
+            &lt;/L7p:Include&gt;
+        &lt;/wsp:OneOrMore&gt;
+        &lt;wsp:OneOrMore wsp:Usage=&quot;Required&quot;&gt;
+            &lt;wsp:All wsp:Usage=&quot;Required&quot;&gt;
+                &lt;L7p:AddHeader&gt;
+                    &lt;L7p:HeaderName stringValue=&quot;Access-Control-Allow-Origin&quot;/&gt;
+                    &lt;L7p:HeaderValue stringValue=&quot;*&quot;/&gt;
+                    &lt;L7p:RemoveExisting booleanValue=&quot;true&quot;/&gt;
+                    &lt;L7p:Target target=&quot;RESPONSE&quot;/&gt;
+                &lt;/L7p:AddHeader&gt;
+            &lt;/wsp:All&gt;
+            &lt;L7p:assertionComment&gt;
+                &lt;L7p:Properties mapValue=&quot;included&quot;&gt;
+                    &lt;L7p:entry&gt;
+                        &lt;L7p:key stringValue=&quot;LEFT.COMMENT&quot;/&gt;
+                        &lt;L7p:value stringValue=&quot;UTILE ?&quot;/&gt;
+                    &lt;/L7p:entry&gt;
+                &lt;/L7p:Properties&gt;
+            &lt;/L7p:assertionComment&gt;
+        &lt;/wsp:OneOrMore&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</Resource>
+                </ResourceSet>
+            </Resources>
+        </Service>
+    </Resource>
+</Item>

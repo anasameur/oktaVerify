@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Item xmlns="http://ns.l7tech.com/2010/04/gateway-management">
+    <Name>rec1-authokta_api_v1-jwtverify dependencies</Name>
+    <Type>DEPENDENCY</Type>
+    <TimeStamp>2018-08-28T09:46:19.633+02:00</TimeStamp>
+    <Link rel="self" uri="https://dcvsvu807.d70.tes.local:8443/restman/1.0/services/8789b965e6d41a37daa640c4564a0585/dependencies"/>
+    <Resource>
+        <DependencyList>
+            <Reference>
+                <Name>rec1-authokta_api_v1-jwtverify</Name>
+                <Id>8789b965e6d41a37daa640c4564a0585</Id>
+                <Type>SERVICE</Type>
+                <Dependencies>
+                    <Dependency>
+                        <Name>-rec1-.authokta_api_v1.url</Name>
+                        <Id>8789b965e6d41a37daa640c456498e54</Id>
+                        <Type>CLUSTER_PROPERTY</Type>
+                    </Dependency>
+                    <Dependency>
+                        <Name>SSL</Name>
+                        <Id>00000000000000000000000000000002:SSL</Id>
+                        <Type>SSG_KEY_ENTRY</Type>
+                    </Dependency>
+                    <Dependency>
+                        <Name>rec1-route_lib_v1-catch_reason_code_backend</Name>
+                        <Id>8789b965e6d41a37daa640c45630232e</Id>
+                        <Type>POLICY</Type>
+                    </Dependency>
+                </Dependencies>
+            </Reference>
+            <Dependencies>
+                <Dependency>
+                    <Name>-rec1-.authokta_api_v1.url</Name>
+                    <Id>8789b965e6d41a37daa640c456498e54</Id>
+                    <Type>CLUSTER_PROPERTY</Type>
+                </Dependency>
+                <Dependency>
+                    <Name>SSL</Name>
+                    <Id>00000000000000000000000000000002:SSL</Id>
+                    <Type>SSG_KEY_ENTRY</Type>
+                </Dependency>
+                <Dependency>
+                    <Name>rec1-route_lib_v1-catch_reason_code_backend</Name>
+                    <Id>8789b965e6d41a37daa640c45630232e</Id>
+                    <Type>POLICY</Type>
+                </Dependency>
+            </Dependencies>
+            <MissingDependencies/>
+        </DependencyList>
+    </Resource>
+</Item>

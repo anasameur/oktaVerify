@@ -1,0 +1,7 @@
+Fri Oct  5 15:30:01 CEST 2018 : Debut traitement 
+Fri Oct  5 15:30:01 CEST 2018 : Parametres : 
+Fri Oct  5 15:30:01 CEST 2018 :  - repertoire de destination : /opt/authokta/nodeapps/apps/resources/okta-keys
+Fri Oct  5 15:30:01 CEST 2018 :  - okta host                 : engie.okta-emea.com
+Fri Oct  5 15:30:01 CEST 2018 :  - id organization server    : 
+Fri Oct  5 15:30:04 CEST 2018 : Fichier de cles mis a jour : /opt/authokta/nodeapps/apps/resources/okta-keys/engie.okta-emea.com
+Fri Oct  5 15:30:04 CEST 2018 : Fin traitement OK 

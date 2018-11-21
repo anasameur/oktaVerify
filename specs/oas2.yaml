@@ -1,0 +1,42 @@
+swagger: "2.0"
+info:
+  description: "Validate a OKTA JWT. Open API, free to use. LAN Only"
+  version: "1.0.0"
+  title: "OAuth OKTA - Validator"
+  termsOfService: ""
+host: "es2-gses.gdfsuez.net:8080"
+basePath: "/authokta/api/v1/"
+tags:
+- name: OAuth
+schemes:
+- "http"
+paths:
+  /jwtverify:
+    post:
+      tags:
+        - OAuth
+      summary: "Validate a Okta JWT"
+      description: ""
+      operationId: "jwtverify"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "simple json with a 'token' field"
+        required: true
+        schema:
+          $ref: '#/definitions/OKTA_JWT'
+      responses:
+        400:
+          description: "Bad request, bad json or bad token"
+definitions:
+  OKTA_JWT:
+    type: object
+    properties:
+      token:
+        type: string
+        format: string
+        description: the JWT token as base64

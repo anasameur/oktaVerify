@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "25624cb0-d79b-42dc-bbd5-67d007ae9a97",
+		"name": "API /authokta/api/v1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TEST_MANUEL",
+			"item": [
+				{
+					"name": "/authokta/api/v1/jwtverify",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "}q3PQ5=S",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "apim_user",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"token\" : \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c\"\n}"
+						},
+						"url": {
+							"raw": "http://es2{{suffix}}.gses.gdfsuez.net:8080/authokta/api/v1/jwtverify",
+							"protocol": "http",
+							"host": [
+								"es2{{suffix}}",
+								"gses",
+								"gdfsuez",
+								"net"
+							],
+							"port": "8080",
+							"path": [
+								"authokta",
+								"api",
+								"v1",
+								"jwtverify"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TEST_AUTO",
+			"item": []
+		},
+		{
+			"name": "PING_SLA",
+			"item": []
+		}
+	]
+}
